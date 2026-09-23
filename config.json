@@ -1,0 +1,29 @@
+{
+  "name": "DSV Shipping Exception Agent",
+  "description": "Monitors DSV shipping exceptions (delays, customs holds, capacity issues), triages severity, drafts customer updates and resolution options",
+  "metadata": {
+    "ls_user_id": "<your-user-id>",
+    "organization_id": "<your-org-id>",
+    "tenant_id": "<your-tenant-id>"
+  },
+  "config": {
+    "configurable": {
+      "skip_memory_write_protection": false,
+      "slack_oauth_provider_id": "<your-slack-oauth-provider-id>",
+      "llm_model_config": {
+        "modelId": "langchain:fast"
+      },
+      "backend_type": "default",
+      "sandbox_snapshot_id": "",
+      "visibility_scope": "user",
+      "triggers_paused": false
+    }
+  },
+  "triggers": [
+    "<trigger-id-scheduled-scan>",
+    "<trigger-id-slack-mention>"
+  ],
+  "cron_schedules": [
+    "*/20 * * * *"
+  ]
+}

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Triage flow: an exception is scored, ranked options are drafted, and a human approves before anything with a cost runs. Low-severity cases are batched into a daily digest.">
+  <style>
+    .box  { fill:#F7F7F5; stroke:#DBD9D3; stroke-width:1.5 }
+    .gate { fill:#E5E2F4; stroke:#3A2E8F; stroke-width:2.5 }
+    .t    { font-family:"IBM Plex Sans",system-ui,sans-serif; font-size:23px; font-weight:600; fill:#1A1C20 }
+    .s    { font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:14px; fill:#5C6169 }
+    .k    { font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:14px; fill:#8A8F97 }
+    .ta   { fill:#3A2E8F }
+    .line { stroke:#8A8F97; stroke-width:2; fill:none }
+    .acc  { stroke:#3A2E8F; stroke-width:2.5; fill:none }
+  </style>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8A8F97"/>
+    </marker>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3A2E8F"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="500" fill="#EDECE7"/>
+  <text class="k" x="30" y="46">triage flow</text>
+
+  <!-- main path -->
+  <rect class="box" x="30" y="92" width="162" height="108" rx="2"/>
+  <text class="t" x="48" y="132">Exception</text>
+  <text class="s" x="48" y="158">air · ocean</text>
+  <text class="s" x="48" y="178">road · rail</text>
+
+  <line class="line" x1="192" y1="146" x2="220" y2="146" marker-end="url(#a)"/>
+
+  <rect class="box" x="228" y="92" width="162" height="108" rx="2"/>
+  <text class="t" x="246" y="132">Triage</text>
+  <text class="s" x="246" y="158">SLA · tier</text>
+  <text class="s" x="246" y="178">value · time</text>
+
+  <line class="line" x1="390" y1="146" x2="418" y2="146" marker-end="url(#a)"/>
+
+  <rect class="box" x="426" y="92" width="162" height="108" rx="2"/>
+  <text class="t" x="444" y="132">Options</text>
+  <text class="s" x="444" y="158">two or three</text>
+  <text class="s" x="444" y="178">cost vs time</text>
+
+  <line class="acc" x1="588" y1="146" x2="616" y2="146" marker-end="url(#b)"/>
+
+  <rect class="gate" x="624" y="92" width="150" height="108" rx="2"/>
+  <text class="t ta" x="642" y="132">Approval</text>
+  <text class="s" x="642" y="158">a human</text>
+  <text class="s" x="642" y="178">decides</text>
+
+  <!-- low-severity branch -->
+  <path class="line" d="M309 200 L309 300 L418 300" marker-end="url(#a)"/>
+  <text class="k" x="200" y="252">low severity</text>
+
+  <rect class="box" x="426" y="256" width="162" height="88" rx="2"/>
+  <text class="t" x="444" y="292">Digest</text>
+  <text class="s" x="444" y="318">once a day</text>
+
+  <!-- drafts -->
+  <rect class="box" x="30" y="382" width="744" height="88" rx="2"/>
+  <text class="t" x="48" y="418">Two drafts, every time</text>
+  <text class="s" x="48" y="446">a customer update in plain language  ·  an internal note with the approval ask</text>
+  <path class="line" d="M507 200 L507 382" stroke-dasharray="3 5" marker-end="url(#a)"/>
+  <path class="line" d="M699 200 L699 382" stroke-dasharray="3 5" marker-end="url(#a)"/>
+</svg>
